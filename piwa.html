@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/LayoutRwd.css" type="text/css">
+    <link rel="stylesheet" href="style/menu.css" type="text/css">
+    <title>Chmielne</title>
+</head>
+<body> 
+  <div class="grid-container">
+    <header title="<header>"> 
+        <h1>Browar "Chmiel"</h1>
+    </header>
+    <nav  title="<nav>">
+        <h2>Menu</h2>
+        <ul> 
+            <li><a href="index.html" target="_self">Strona główna</a></li> 
+            <li><a href="mapa.html" target="_self">Mapa</a></li>
+            <li><a href="onas.html" target="_self">O nas</a></li>
+            <li><a href="prezentacja.html" target="_self">Prezentacja</a></li>
+            <li><a href="piwa.html" target="_self">Nasze piwa</a></li>
+            <li><a href="kontkat-formularz.html" target="_self">Kariera</a></li>
+            <li><a href="konwerter.html" target="_self">Kalkulator</a></li>
+            <li><a href="Canvas.html" target="_self">Canvas</a></li>
+            <li><a href="Kontakt.html" target="_self">Kontakt</a></li>
+            <li><a href="blog.html" target="_self">Blog</a></li>
+        </ul>
+    </nav>
+    <article title="<article>">
+        <h2 style="text-align:center;">Nasze piwa</h2>
+        <div id="tabela-piw" style="display:flex; justify-content:center;"></div>
+
+        <script>
+            function Piwo(nazwa, typ, alkohol, smak, opakowania) {
+                this.nazwa = nazwa;
+                this.typ = typ;
+                this.alkohol = alkohol;
+                this.smak = smak;
+                this.opakowania = opakowania;
+            }
+
+            const piwa = [
+                new Piwo("Hoppy Rider", "IPA", "6.5%", "cytrusy", ["butelka", "puszka"]),
+                new Piwo("Miodowa Dolina", "Lager", "5.2%", "miód", ["butelka", "puszka"]),
+                new Piwo("Zimowy Port", "Porter", "8.0%", "śliwka", ["butelka", "puszka"]),
+                new Piwo("Letnia Mgła", "Hefeweizen", "4.8%", "banan", ["butelka"]),
+                new Piwo("Kwaśna Śliwa", "Sour Ale", "4.2%", "śliwa", ["puszka"]),
+                new Piwo("Kasztanowy Szlak", "Red Ale", "5.5%", "orzech", ["butelka"]),
+                new Piwo("Zielona Gorycz", "Double IPA", "7.8%", "żywica", ["puszka"]),
+                new Piwo("Czekoladowy Dym", "Stout", "6.9%", "czekolada", ["butelka", "puszka"]),
+                new Piwo("Owocowy Raj", "Fruit Ale", "5.0%", "malina", ["puszka"]),
+                new Piwo("Złoty Łan", "Pilsner", "4.5%", "zboże", ["butelka"])
+            ];
+
+            function TabelaPiw() {
+                const container = document.getElementById("tabela-piw");
+                const tabela = document.createElement("table");
+                tabela.border = "1";
+                tabela.cellPadding = "5";
+                tabela.style.margin = "0 auto";
+                tabela.className = "wikitable sortable";
+
+                let thead = `
+                    <thead>
+                        <tr>
+                            <th>Nazwa piwa</th>
+                            <th>Typ</th>
+                            <th>Alkohol</th>
+                            <th>Smak</th>
+                            <th>Opakowanie</th>
+                        </tr>
+                    </thead>
+                `;
+                let tbody = "<tbody>";
+
+                for (let i = 0; i < piwa.length; i++) {
+                    const p = piwa[i];
+
+                    if (p.opakowania.length > 1) {
+                        for (let j = 0; j < p.opakowania.length; j++) {
+                            tbody += "<tr>";
+                            if (j === 0) {
+                                tbody += `<td rowspan="${p.opakowania.length}">${p.nazwa}</td>`;
+                                tbody += `<td rowspan="${p.opakowania.length}">${p.typ}</td>`;
+                                tbody += `<td rowspan="${p.opakowania.length}">${p.alkohol}</td>`;
+                                tbody += `<td rowspan="${p.opakowania.length}">${p.smak}</td>`;
+                            }
+                            tbody += `<td>${p.opakowania[j]}</td>`;
+                            tbody += "</tr>";
+                        }
+                    } else {
+                        tbody += `
+                            <tr>
+                                <td>${p.nazwa}</td>
+                                <td>${p.typ}</td>
+                                <td>${p.alkohol}</td>
+                                <td>${p.smak}</td>
+                                <td>${p.opakowania[0]}</td>
+                            </tr>`;
+                    }
+                }
+
+                tbody += "</tbody>";
+                tabela.innerHTML = thead + tbody;
+                container.appendChild(tabela);
+            }
+
+            window.onload = TabelaPiw;
+        </script>
+    </article>
+    <aside>
+        <iframe src="KontrolkiJS.html">
+        </iframe>
+    </aside>
+    <footer>
+        Projekt strony internetowej wykonany w ramach zaliczenia przedmiotu MO: TIiSKwE na kierunku Energetyka. <br />
+        Matvei Krasnikau 156363 <br />
+    </footer>
+    
+</body>
+</html>

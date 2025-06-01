@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Prezentacja</title>
+
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <link rel="stylesheet" media="screen" href="themes/style/web-2.0.css">
+
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+    <div class="deck-container">
+
+
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Czym jest piwo?</h3>
+            <img src="logo.png" width="300" height="300" />
+            <br />
+            Piwo to napój alkoholowy otrzymywany w wyniku fermentacji cukrów pochodzących ze słodu z udziałem drożdży. Do produkcji piwa używa się czterech podstawowych składników: wody, słodu jęczmiennego, chmielu i drożdży. Piwo może mieć różny smak, kolor i aromat w zależności od rodzaju użytego słodu, gatunku chmielu i stylu fermentacji.
+        </section>
+    
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Słodowanie i zacieranie</h3>
+            <img src="slajd2.png" width="300" height="300" />
+            <br />
+            Proces rozpoczyna się od słodowania – kiełkowania ziarna jęczmienia i jego suszenia w celu uzyskania słodu. Następnie słód jest śrutowany i mieszany z wodą w kadzi zaciernej. Mieszanka ta jest podgrzewana w celu przekształcenia skrobi zawartej w ziarnie w cukry proste. Powstała ciecz to brzeczka.
+        </section>
+    
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Gotowanie z chmielem</h3>
+            <img src="slajd3.png" width="300" height="300" />
+            <br />
+            Brzeczka trafia do kadzi warzelnej, gdzie jest gotowana przez około 60–90 minut. W tym czasie dodaje się chmiel. Chmiel dodany na początku nadaje goryczkę, a chmiel dodany pod koniec – aromat. Gotowanie eliminuje drobnoustroje i stabilizuje składniki.
+        </section>
+    
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Chłodzenie i fermentacja</h3>
+            <img src="slajd4.png" width="300" height="300" />
+            <br />
+            Po gotowaniu brzeczka jest schładzana do odpowiedniej temperatury. Do schłodzonej brzeczki dodaje się drożdże. Rozpoczyna się proces fermentacji, w którym drożdże przekształcają cukry w alkohol etylowy i dwutlenek węgla. Fermentacja może trwać od kilku dni do kilku tygodni w zależności od rodzaju piwa.
+        </section>
+    
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Leżakowanie i dojrzewanie</h3>
+            <img src="slajd5.png" width="300" height="300" />
+            <br />
+            Po fermentacji piwo jest leżakowane w niższej temperaturze. W czasie leżakowania smak piwa się zaokrągla, a osady opadają na dno. Czasem piwo jest filtrowane w celu uzyskania większej klarowności. Leżakowanie może trwać od kilku dni do kilku tygodni.
+        </section>
+    
+        <section class="slide" style="background: #f5f5dc; color: black; text-align: center; padding: 20px;">
+            <h3>Rozlew i gotowy produkt</h3>
+            <img src="slajd6.png" width="250" height="300" />
+            <br />
+            Gotowe piwo jest rozlewane do butelek, puszek lub beczek. Może być wcześniej sztucznie gazowane lub pozostawione do naturalnego nasycenia. Gotowy produkt trafia do konsumenta. Smak, aromat i wygląd piwa zależą od całego procesu jego produkcji oraz dobranych składników.
+        </section>
+
+        <div aria-role="navigation">
+            <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+            <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+        </div>
+
+        <p class="deck-status" aria-role="status">
+            <span class="deck-status-current"></span>
+            /
+            <span class="deck-status-total"></span>
+        </p>
+
+        <form action="." method="get" class="goto-form">
+            <label for="goto-slide">Go to slide:</label>
+            <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+            <datalist id="goto-datalist"></datalist>
+            <input type="submit" value="Go">
+        </form>
+
+    </div>
+
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"  title="<aside>">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="js/kontrolki.js" type="text/javascript"></script>
+    <script src="js/zegarek.js" type="text/javascript"></script>
+</head>
+<body>
+ <section class="javaScript" id="java1">
+        </section>
+        <section class="javaScript" id="java2">
+            <p>Aktualny czas:</p>
+            <input type="text" id="clock" readonly><br />
+            <p>Aktualna data:</p>
+            <div id="data"></div>
+            <p>Czas na stronie:</p>
+            <input type="text" id="myTimer" readonly><br />
+            <p>Licznik odwiedzin:</p>
+            <input type="text" id="licznik" readonly>
+        </section>
+<section class="javaScript" id="java1" style="text-align:center">
+            <h1>Muzyka </h1>
+            <button id="bplay">Play</button>
+            <button id="bstop">Stop</button>
+            <script>
+                var snd = new Audio("piwo.mp3");
+                snd.loop = true;
+                snd.autoplay = true;
+    
+                document.getElementById("bstop").onclick = function () { snd.pause(); };
+    
+                document.getElementById("bplay").onclick = function () { snd.play(); };
+            </script>
+        </section>
+
+</body>
+</html>

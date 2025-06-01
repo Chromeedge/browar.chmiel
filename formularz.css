@@ -1,0 +1,67 @@
+form {
+    border: 2px solid #c8b08b;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #fdf7f0; 
+    font-size: 16px;
+    color: #333;
+    margin: 20px;
+}
+
+fieldset {
+    border: 1px solid #d8c4a0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fbf5e9;
+}
+
+legend {
+    font-weight: bold;
+    color: #8c7753; 
+}
+
+label {
+    margin-bottom: 5px;
+    font-size: 14px; 
+}
+
+input, select, textarea {
+    width: 100%; 
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="checkbox"] ,input[type="radio"] {
+    width: 30px;
+}
+
+input[type="checkbox"]+label ,input[type="radio"]+label { 
+    display: inline; 
+}
+
+
+
+input[type="submit"], input[type="reset"] {
+    width: auto; 
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer; 
+}
+
+input[type="reset"] {
+    background-color: #CC0000;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+em {
+    color: red;
+}

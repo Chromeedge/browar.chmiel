@@ -1,0 +1,81 @@
+nav a:link {  /*  link przed kliknieciem  */
+    color: rgb(3, 31, 156);
+}
+nav a:visited {  /* link po odwiedzeniu */
+    color: rgb(0, 118, 165);
+    text-shadow: none;
+}
+
+nav a:hover {  /* link po najechaniu wskaźnikiem myszki */
+    color: wheat;
+    border-left: 1px solid grey;
+    background-color: #3a3a3a6e;
+    padding-top: 1px;
+
+}
+
+
+nav a {  /* domyslne style */
+    font-family: Verdana;
+    display: block;   /* poniewaz link domyslnie ma display: inline, nie moglibysmy ustawić mu wyskości i szerokości bez zmiany na block */
+    width: 200px;
+    height: 30px;
+    border: 1px solid grey;
+    text-decoration: none;  /* usuwa domyślne podkreślenie */
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;  /* usuwa kropkę lub numer danej pozycji listy, uwaga wcięcie pozostaje */
+    margin-left: -20px;  /* umożliwia przesunięcie tekstu w lewo i usunięcie wcięcia po punkatach */
+}
+
+nav li:first-child a {
+    border-top-left-radius: 5px;  /* dodaje zaokrąglenie tylko w jednym narożniku */
+    border-top-right-radius: 5px;
+}
+
+nav li:last-child a {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+nav h2 {
+    color: #424242;
+    text-align: center;
+    font-size: 52px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2px;
+}
+
+
+@media (max-width: 1320px) {
+    nav ul {
+        display: flex;  /* ustawia elastyczne ulożenie elementów */
+        flex-direction: row;  /* wymusza ułozenie elementów w wierszu od lewej strony */
+        height: 70px;  /* ponieważ nie wiemy czy elementy zmieszczą się w jednym wierszu lub dwóch ustawiamy stałą wysokość kontenera flex - wymagane dla poprawnego wyswietlenia tła */
+        flex-wrap: wrap;  /* gdy elementy nie mieszczą się z lewej strony przenosi je do kolejnego wiersza */
+        align-content: space-between;  /* ustawa maksymalną przestrzeń pomiędzy wierszami */
+    }
+    nav li a {
+        max-width: 150px;
+        min-width: 50px;
+        width: auto;
+        padding: 5px;
+        border-radius: 0px;
+    }
+    nav li:first-child a {
+      border-radius: 5px 0px 0px 5px;
+    }
+    nav li:last-child a {
+      border-radius: 0px 5px 5px 0px;
+    }
+    nav a:hover {
+        border-left-width: 1px;
+        border-left-width: 1px;
+        border-top-width: 10px;
+        margin-top: -10px;
+        height: 40px;
+        border-radius: 5px !important;
+    }
+}
